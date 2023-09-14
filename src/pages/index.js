@@ -1,10 +1,9 @@
-import Navbar from "@/components/Navbar/Navbar"
+import Carousel from "../components/Carousel/Carousel"
 
 export default function Home() {
   return (
     <main>
-      Hello
-      <Navbar />
+      <Carousel />
     </main>
   )
 }
