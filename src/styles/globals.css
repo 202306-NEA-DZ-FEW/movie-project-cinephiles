@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.embla {
+  overflow: hidden;
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+}
+.embla__container {
+  display: flex;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,6 +20,10 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }
 
 body {
