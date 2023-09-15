@@ -7,7 +7,6 @@ const Actors = ({ actors }) => {
     "https://www.themoviedb.org/t/p/w300_and_h450_bestv2_filter(blur)/iFerDZUmC5Fu26i4qI8xnUVEHc7.jpg"
   return (
     <>
-      <Navbar />
       <div className="flex flex-row">
         {actors.results.map((actor, index) => (
           <ActorCard key={index} {...actor} />
