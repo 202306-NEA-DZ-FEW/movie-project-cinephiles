@@ -1,8 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.embla {
+@import "https://fonts.googleapis.com/css?family=Lily+Script+One";
+/* .embla {
   overflow: hidden;
 }
 .embla__container {
@@ -11,4 +11,45 @@
 .embla__slide {
   flex: 0 0 100%;
   min-width: 0;
+} */
+
+.card {
+  width: 300px;
+  height: 300px;
+  perspective: 500px;
+  margin-left: 35px;
+}
+
+.content {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .content {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  line-height: 150px;
+  color: #03446a;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.back {
+  background: #03446a;
+  color: white;
+  transform: rotateY(180deg);
 }
