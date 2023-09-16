@@ -1,9 +1,12 @@
+import Card from "@/components/MovieCard/MovieCard"
 import Carousel from "../components/Carousel/Carousel"
+import Link from "next/link"
 
 export default function Home({ latest }) {
   return (
     <main>
       <Carousel latest={latest} />
+      <Link href="movies/movie">Movies</Link>
     </main>
   )
 }
