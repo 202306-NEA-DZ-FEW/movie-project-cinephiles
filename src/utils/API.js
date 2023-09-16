@@ -1,5 +1,5 @@
 export default async function fetcher(apiRoute) {
-  const url = "https://api.themoviedb.org/3/movie/" + apiRoute
+  const url = "https://api.themoviedb.org/3/" + apiRoute
   const options = {
     headers: {
       accept: "application/json",
