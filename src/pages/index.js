@@ -46,6 +46,9 @@ export default function Home() {
         <Grid item xs={9} sm={3} md={1.45}>
           <Card />
         </Grid>
+        <Grid item xs={9} sm={3} md={1.45}>
+          <Card />
+        </Grid>
       </Grid>
     </main>
   )
