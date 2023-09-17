@@ -58,12 +58,12 @@ export default function Navbar() {
         {/* Search feild */}
         <div className="min-[790px]: flex justify-center">
           <input
-            class="bg-[#141F26] border-2 border-[#1E4445]  h-10 px-5 pr-16 rounded-2xl text-sm text-[#F2F2F2] .placeholder-gray-400 focus:outline-none min-[790px]:flex min-[790px]:place-self-center"
+            className="bg-[#141F26] border-2 border-[#1E4445]  h-10 px-5 pr-16 rounded-2xl text-sm text-[#F2F2F2] .placeholder-gray-400 focus:outline-none min-[790px]:flex min-[790px]:place-self-center"
             type="search"
             name="search"
             placeholder="Search..."
           />
-          <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+          <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
             {/* <svg 
               class="text-gray-600 h-4 w-4 fill-current" 
               style="enable-background:new 0 0 56.966 56.966;"
