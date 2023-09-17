@@ -2,9 +2,11 @@ import Card from "@/components/MovieCard/MovieCard"
 import Carousel from "../components/Carousel/Carousel"
 import Link from "next/link"
 import fetcher from "@/utils/API"
+import { useState } from "react"
 
 export default function Home({ latest }) {
   const options = ["Top Rated", "Popular", "Now Playing", "Upcoming"]
+
   return (
     <main>
       <ul>

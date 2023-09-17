@@ -76,14 +76,14 @@ export default function SingleMovie({ movieDetails }) {
 
   return (
     <div>
-      {/* <img
+      <img
         src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
         alt={`${movieDetails.title} Poster`}
       />
       <img
         src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`}
         alt={`${movieDetails.title} Poster`}
-      /> */}
+      />
       <h2>Title : {movieDetails.title}</h2>
       <p> </p>
       <p>Release date : {movieDetails.release_date} </p>

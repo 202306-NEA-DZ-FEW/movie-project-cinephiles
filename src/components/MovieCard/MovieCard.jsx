@@ -11,10 +11,10 @@ export default function MovieCard({ title, poster_path, vote_average }) {
       onPress={() => console.log("item pressed")}
     >
       <CardBody className="overflow-visible p-0">
-        {/* <img
+        <img
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}
           alt={`${title} Poster`}
-        /> */}
+        />
       </CardBody>
       <CardFooter className="text-small justify-between">
         <b>{title}</b>
