@@ -1,20 +1,17 @@
 import React from "react"
-import Image from "next/image"
-export default function Navbar() {
+import GenreDropdown from "../GenreDropdown"
+
+const Navbar = ({ genres, selectedGenre, onGenreChange }) => {
   return (
-    <nav className="fixed w-full h-24 shadow-xl text-[22px]">
-      <div>
-        <div>
-          <Image />
-        </div>
-        <div>
-          <ul classeName="flex-none">
-            <li> About </li>
-            <li> Movies </li>
-            <li> Actors </li>
-          </ul>
-        </div>
-      </div>
+    <nav>
+      <h1>Movie Genres App</h1>
+      <GenreDropdown
+        genres={genres}
+        selectedGenre={selectedGenre}
+        onChange={onGenreChange}
+      />
     </nav>
   )
 }
+
+export default Navbar
