@@ -1,8 +1,10 @@
+import SearchBar from "@/components/Navbar/Searchbar"
 import Carousel from "../components/Carousel/Carousel"
 
 export default function Home({ latest }) {
   return (
     <main>
+      <SearchBar />
       <Carousel latest={latest} />
     </main>
   )
