@@ -4,8 +4,24 @@ import Link from "next/link"
 import fetcher from "@/utils/API"
 
 export default function Home({ latest }) {
+  const options = ["Top Rated", "Popular", "Now Playing", "Upcoming"]
   return (
     <main>
+      <ul>
+        <li>
+          {options.map((option) => (
+            <>
+              <Link
+                href={`./categorys/${option
+                  .toLowerCase()
+                  .replace(/\s+/g, "_")}`}
+              >
+                {option}
+              </Link>
+            </>
+          ))}
+        </li>
+      </ul>
       <Carousel latest={latest} />
       <Link href="/movies/movie">Movies</Link>
     </main>
