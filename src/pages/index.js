@@ -1,9 +1,11 @@
 import LatestMovies from "@/components/HomePageMovies/LatestMovies"
 import SearchResults from "@/components/Navbar/SearchFunction/SearchResults"
+import Navbar from "@/components/Navbar/Navbar"
 
 export default function Home({ latest }) {
   return (
     <main>
+      <Navbar />
       <SearchResults />
       <LatestMovies latest={latest} />
     </main>
