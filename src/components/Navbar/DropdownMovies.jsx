@@ -7,18 +7,8 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 function DropdownMovies() {
-  const options = ["Top Rate", "Popular", "Latest", "Now playing", "Upcoming"]
+  const options = ["Top Rated", "Popular", "Latest", "Now playing", "Upcoming"]
 
-  const option = options.map((option, index) => {
-    return (
-      <a
-        key={index}
-        className=" relative flex flex-row gap-2 ml-10 uppercase hover:border-b border-b-[#1E4445] hover:text-[#72fbd7] active text-base"
-      >
-        {option}
-      </a>
-    )
-  })
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -39,21 +29,25 @@ function DropdownMovies() {
       >
         <Menu.Items className="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-[#141F26] bg-opacity-60 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
-            <Menu.Item>
-              {({ active }) => (
-                <Link
-                  href="#"
-                  className={classNames(
-                    active
-                      ? "hover:border-b border-b-[#1E4445] hover:text-[#72fbd7] text-gray-300"
-                      : "text-gray-600",
-                    "block px-4 py-2 text-sm",
-                  )}
-                >
-                  {option}
-                </Link>
-              )}
-            </Menu.Item>
+            {options.map((option) => (
+              /* Use the `active` state to conditionally style the active item. */
+              <Menu.Item key={option.id} as={Fragment}>
+                {({ active }) => (
+                  <Link
+                    href="#"
+                    className={classNames(
+                      active
+                        ? "hover:border-b border-b-[#1E4445] hover:text-[#72fbd7] text-gray-300"
+                        : "text-gray-600",
+                      "block px-4 py-2 text-sm",
+                    )}
+                  >
+                    {" "}
+                    {option}
+                  </Link>
+                )}
+              </Menu.Item>
+            ))}
           </div>
         </Menu.Items>
       </Transition>
