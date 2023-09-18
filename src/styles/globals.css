@@ -1,17 +1,8 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import "https://fonts.googleapis.com/css?family=Lily+Script+One";
-/* .embla {
-  overflow: hidden;
-}
-.embla__container {
-  display: flex;
-}
-.embla__slide {
-  flex: 0 0 100%;
-  min-width: 0;
-} */
 
 .card {
   width: 300px;
@@ -52,4 +43,9 @@
   background: #03446a;
   color: white;
   transform: rotateY(180deg);
+}
+
+body {
+  background: #141f26;
+  color: #f2f2f2;
 }
