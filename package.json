@@ -27,6 +27,7 @@
     "embla-carousel-react": "^8.0.0-rc12",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "framer-motion": "^10.16.4",
     "git-cz": "^4.9.0",
     "next": "13.4.19",
     "postcss": "8.4.29",
