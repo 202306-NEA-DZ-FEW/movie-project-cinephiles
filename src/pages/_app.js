@@ -1,5 +1,5 @@
 import "@/styles/globals.css"
-import { SearchProvider } from "@/components/Navbar/Search/SearchContext"
+import { SearchProvider } from "@/components/Navbar/SearchFunction/SearchContext"
 
 export default function App({ Component, pageProps }) {
   return (
