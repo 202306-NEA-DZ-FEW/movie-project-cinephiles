@@ -34,7 +34,6 @@ const MoviesList = ({ selectedGenre }) => {
 
     fetchMoviesByGenre()
   }, [selectedGenre])
-
   return (
     <div>
       <h2>Movies of Selected Genre</h2>

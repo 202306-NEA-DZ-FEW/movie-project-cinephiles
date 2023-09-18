@@ -1,14 +1,8 @@
 // pages/index.js
 import React, { useState } from "react"
-import Navbar from "@/components/Navbar/Navbar"
 import MoviesList from "@/components/BackupDropdown/MoviesList"
-import LatestMovies from "@/components/HomePageMovies/LatestMovies"
-
-const genres = [
-  { id: 28, name: "Action" },
-  { id: 12, name: "Adventure" },
-  // Add more genres as needed
-]
+import { genres } from "@/utils/dbGenres"
+import GenreDropdown from "@/components/BackupDropdown/GenreDropdown"
 
 const Home = () => {
   const [selectedGenre, setSelectedGenre] = useState("")
@@ -19,13 +13,8 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar
-        genres={genres}
-        selectedGenre={selectedGenre}
-        onGenreChange={handleGenreChange}
-      />
+      <GenreDropdown genres={genres} />
       <MoviesList selectedGenre={selectedGenre} />
-      <LatestMovies latest={latest} />
     </div>
   )
 }

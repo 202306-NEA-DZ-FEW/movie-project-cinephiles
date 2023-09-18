@@ -7,7 +7,6 @@ import { fetcher } from "../../utils/api"
 const Persons = ({ people }) => {
   return (
     <div>
-      <Navbar />
       <Grid container spacing={1}>
         {people.results.map((person, index) => {
           return (

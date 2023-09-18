@@ -2,9 +2,10 @@ import { CgMenuGridO } from "react-icons/cg"
 import { useState } from "react"
 import Logo from "./NavbrLogo"
 import LinkMenu from "./LinkMenu"
-import Searchbar from "./Searchbar/Searchbar"
+import Link from "next/link"
 import DropdownGenres from "./DropdownGenres"
 import DropdownMovies from "./DropdownMovies"
+import SearchBar from "./SearchFunction/SearchBar"
 
 const Navbar = ({ data }) => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -20,15 +21,15 @@ const Navbar = ({ data }) => {
         {/* Links [Home, Genre, Movies, Actors] */}
         <div className="hidden min-[790px]:flex">
           {/*! Links to add in hrf attributes */}
-          <LinkMenu option="Home" href="#" />
+          <LinkMenu option="Home" href="/" />
           <DropdownGenres option={data} />
           <DropdownMovies option="Movies" href="#" />
-          <LinkMenu option="Actors" href="#" />
+          <LinkMenu option="Actors" href="/person" />
         </div>
 
         {/* Search feild */}
         <div className="min-[790px]: flex justify-center ">
-          <Searchbar />
+          {/* <SearchBar /> */}
         </div>
 
         {/* Hamburger menu for mobile app */}

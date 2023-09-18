@@ -5,7 +5,7 @@ import ItemsContainer from "@/components/Footer/ItemsContainer"
 export default function Footer() {
   const current_year = new Date().getFullYear()
   return (
-    <footer className="bg-gray-900 text-white h-50 bottom-0 fixed w-full">
+    <footer className="bg-gray-900 text-white h-50 bottom-0 w-full">
       {/* <div>
         <Image 
         src={logo}
