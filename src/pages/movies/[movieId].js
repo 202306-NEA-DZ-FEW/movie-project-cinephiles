@@ -76,35 +76,52 @@ export default function SingleMovie({ movieDetails }) {
 
   return (
     <div>
-      <img
-        src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
-        alt={`${movieDetails.title} Poster`}
-      />
-      <img
-        src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`}
-        alt={`${movieDetails.title} Poster`}
-      />
-      <h2>Title : {movieDetails.title}</h2>
-      <p> </p>
-      <p>Release date : {movieDetails.release_date} </p>
-      <p>Runtime : {movieDetails.runtime} </p>
-      <p>Movie Language:{movieDetails.original_language} </p>
-      <p>The movie rating : {movieDetails.vote_average} </p>
-      <p>votes : {movieDetails.vote_count}</p>
-      <p>Director name</p>
-      <p>Overview of the movie : {movieDetails.overview} </p>
-      <p>Genres: {genres.map((genre) => genre.name).join(", ")}</p>
-      <p>
-        Production Companies:{" "}
-        {productionCompanies.map((company) => company.name).join(", ")}
-      </p>
-      <p>Top 5 Actors: {actors.map((actor) => actor.name).join(", ")}</p>
-      <p>
-        Related Movies: {relatedMovies.map((movie) => movie.title).join(", ")}
-      </p>
-      <p>
-        Trailer: <a href={trailer}>Watch Trailer</a>
-      </p>
+      <div>
+        <img
+          src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`}
+          alt={`${movieDetails.title} Poster`}
+        />
+
+        <p>
+          Trailer: <a href={trailer}>Watch Trailer</a>
+        </p>
+      </div>
+
+      <div>
+        <div>
+          <img
+            src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+            alt={`${movieDetails.title} Poster`}
+          />
+        </div>
+
+        <div>
+          <h2>Title : {movieDetails.title}</h2>
+        </div>
+
+        <div>
+          <p>Overview of the movie : {movieDetails.overview} </p>
+          <p>Genres: {genres.map((genre) => genre.name).join(", ")}</p>
+          <p>Movie Language:{movieDetails.original_language} </p>
+          <p>Release date : {movieDetails.release_date} </p>
+          <p>Runtime : {movieDetails.runtime} </p>
+          <p>The movie rating : {movieDetails.vote_average} </p>
+          <p>votes : {movieDetails.vote_count}</p>
+        </div>
+
+        <div>
+          <p>Director name</p>
+          <p>
+            Production Companies:{" "}
+            {productionCompanies.map((company) => company.name).join(", ")}
+          </p>
+          <p>Top 5 Actors: {actors.map((actor) => actor.name).join(", ")}</p>
+          <p>
+            Related Movies:{" "}
+            {relatedMovies.map((movie) => movie.title).join(", ")}
+          </p>
+        </div>
+      </div>
     </div>
   )
 }
