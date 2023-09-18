@@ -12,7 +12,7 @@ export default function Item({ title, githubLink, linkedinLink }) {
     bg-gray-700 mx-1.5 text-xl hover:text-gray-100 hover:bg-teal-500
     duration-300 rounded-full h-8 w-8 flex items-center justify-center"
           >
-            {/* <FontAwesomeIcon icon={faGithub} /> */}
+            <FontAwesomeIcon icon={faGithub} />
           </span>
         </a>
         <a href={linkedinLink} target="_blank">
@@ -21,7 +21,7 @@ export default function Item({ title, githubLink, linkedinLink }) {
     bg-gray-700 mx-1.5 text-xl hover:text-gray-100 hover:bg-teal-500
     duration-300 rounded-full h-8 w-8 flex items-center justify-center"
           >
-            {/* <FontAwesomeIcon icon={faLinkedin} /> */}
+            <FontAwesomeIcon icon={faLinkedin} />
           </span>
         </a>
       </div>

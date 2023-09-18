@@ -5,7 +5,7 @@ import ItemsContainer from "@/components/Footer/ItemsContainer"
 export default function Footer() {
   const current_year = new Date().getFullYear()
   return (
-    <footer className="bg-gray-900 text-white h-50">
+    <footer className="bg-gray-900 text-white h-50 bottom-0 fixed w-full">
       {/* <div>
         <Image 
         src={logo}
@@ -14,14 +14,14 @@ export default function Footer() {
         alt='logo'
         />
       </div> */}
-      {/* <ItemsContainer /> */}
-      {/* <div
+      <ItemsContainer />
+      <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10
         text-center pt-2 text-gray-400 text-sm pb-8"
       >
         <span>Copyright © {current_year}. All Rights Reserved.</span>
         <span>Terms of use | Privacy Policy</span>
-      </div> */}
+      </div>
     </footer>
   )
 }
