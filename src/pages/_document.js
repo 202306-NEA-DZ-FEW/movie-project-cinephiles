@@ -8,7 +8,7 @@ export default function Document() {
         <Main />
         <NextScript />
       </body>
-      <Footer />
+      <Footer style={{ marginBottom: "0", position: "fixed" }} />
     </Html>
   )
 }
