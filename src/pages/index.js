@@ -3,13 +3,17 @@ import Carousel from "../components/Carousel/Carousel"
 import Link from "next/link"
 import fetcher from "@/utils/API"
 import { useState } from "react"
+import LatestMovies from "@/components/HomePageMovies/LatestMovies"
+import SearchResults from "@/components/Navbar/SearchFunction/SearchResults"
+import Navbar from "@/components/Navbar/Navbar"
 
 export default function Home({ latest }) {
   const options = ["Top Rated", "Popular", "Now Playing", "Upcoming"]
 
   return (
     <main>
-      <ul>
+      {/* This part link to the Navbar */}
+      {/* <ul>
         <li>
           {options.map((option) => (
             <>
@@ -25,7 +29,10 @@ export default function Home({ latest }) {
         </li>
       </ul>
       <Carousel latest={latest} />
-      <Link href="/movies/movie">Movies</Link>
+      <Link href="/movies/movie">Movies</Link> */}
+      <Navbar />
+      <SearchResults />
+      <LatestMovies latest={latest} />
     </main>
   )
 }
