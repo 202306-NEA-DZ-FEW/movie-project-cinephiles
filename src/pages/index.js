@@ -1,11 +1,16 @@
-import SearchBar from "@/components/Navbar/Searchbar"
 import Carousel from "../components/Carousel/Carousel"
+import LatestMovies from "@/components/HomePageMovies/LatestMovies"
+import SearchResults from "@/components/Navbar/Search/SearchResults"
+import Navbar from "@/components/Navbar/Navbar"
 
 export default function Home({ latest }) {
   return (
     <main>
-      <SearchBar />
+      {/* <SearchBar /> */}
+      <Navbar />
       <Carousel latest={latest} />
+      <SearchResults />
+      <LatestMovies latest={latest} />
     </main>
   )
 }

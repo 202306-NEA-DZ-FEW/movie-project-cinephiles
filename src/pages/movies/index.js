@@ -1,7 +1,8 @@
 // pages/index.js
 import React, { useState } from "react"
 import Navbar from "@/components/Navbar/Navbar"
-import MoviesList from "@/components/MoviesList"
+import MoviesList from "@/components/Navbar/MoviesList"
+import LatestMovies from "@/components/HomePageMovies/LatestMovies"
 
 const genres = [
   { id: 28, name: "Action" },
@@ -24,6 +25,7 @@ const Home = () => {
         onGenreChange={handleGenreChange}
       />
       <MoviesList selectedGenre={selectedGenre} />
+      <LatestMovies latest={latest} />
     </div>
   )
 }
