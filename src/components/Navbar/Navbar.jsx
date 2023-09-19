@@ -6,6 +6,7 @@ import Link from "next/link"
 import DropdownGenres from "./DropdownGenres"
 import DropdownMovies from "./DropdownMovies"
 import SearchBar from "./SearchFunction/SearchBar"
+import SearchbarTemp from "./SearchFunction/SearchbarTemp"
 
 const Navbar = ({ data }) => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -30,6 +31,7 @@ const Navbar = ({ data }) => {
         {/* Search feild */}
         <div className="min-[790px]: flex justify-center ">
           {/* <SearchBar /> */}
+          <SearchbarTemp />
         </div>
 
         {/* Hamburger menu for mobile app */}
