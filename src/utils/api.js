@@ -1,4 +1,4 @@
-export async function fetcher(apiRoute) {
+export default async function fetcher(apiRoute) {
   const url = "https://api.themoviedb.org/3/" + apiRoute
   const options = {
     headers: {
@@ -8,7 +8,7 @@ export async function fetcher(apiRoute) {
     },
   }
 
-  const response = await fetch(url, options)
-  const data = await response.json()
+  const res = await fetch(url, options)
+  const data = await res.json()
   return data
 }

@@ -5,7 +5,7 @@ import { Card, CardBody, CardFooter } from "@nextui-org/react"
 export default function MovieCard({ title, poster_path, vote_average }) {
   return (
     <Card
-      className="bg-grey"
+      className="bg-white hover:bg-transparent hover:text-white"
       shadow="sm"
       isPressable
       onPress={() => console.log("item pressed")}
@@ -16,7 +16,7 @@ export default function MovieCard({ title, poster_path, vote_average }) {
           alt={`${title} Poster`}
         />
       </CardBody>
-      <CardFooter className="text-small justify-between">
+      <CardFooter className="text-small justify-between ">
         <b>{title}</b>
         <p className="text-default-500">
           <span className="text-yellow-400 pr-1">&#9733;</span>

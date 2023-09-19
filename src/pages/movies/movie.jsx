@@ -7,7 +7,7 @@ export default function Movies({ nowPlaying, popular, topRated, upcoming }) {
   return (
     <div>
       <h1 className="text-3xl">nowPlaying</h1>
-      <div className="gap-8 grid grid-cols-2 sm:grid-cols-7">
+      <div className="gap-8 grid grid-cols-2 sm:grid-cols-7 ">
         {nowPlaying.results.map((movie) => (
           <>
             <Link href={`./${movie.id}`}>
