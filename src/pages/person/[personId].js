@@ -1,16 +1,74 @@
-import { fetcher } from "../../utils/api"
+import fetcher from "@/utils/API"
 
 export default function PersonId({ personData }) {
   return (
-    <div>
-      <h1>{personData.name}</h1>
-      <img
-        src={"https://image.tmdb.org/t/p/w500/" + personData.profile_path}
-        alt={personData.name}
-      />
-      <h3>Personal Info</h3>
-      <h4>Also known as: {personData.also_known_as}</h4>
-      <h4>Known For {personData.known_for_department}</h4>
+    <div className=" grid grid-cols-2 gap-1 mt-10 ">
+      <div className="col-start-1 col-end-1 w-2/3 px-2 ">
+        <img
+          className=" m-10 ml-20 rounded-3xl "
+          src={"https://image.tmdb.org/t/p/w500/" + personData.profile_path}
+          alt={personData.name}
+        />
+      </div>
+      <div className="mr-10">
+        <h1 className="text-5xl underline underline-offset-8 font-bold my-6">
+          {personData.name}
+        </h1>
+
+        <h2 className="leading-relaxed mb-4">
+          <span className="text-[#3FAF95] font-medium text-xl">
+            Personal Info :
+          </span>
+        </h2>
+
+        <h4 className="leading-relaxed">
+          <span className="text-[#3FAF95] font-medium text-xl">
+            Also known as :{" "}
+          </span>
+          {personData.biography}
+        </h4>
+        <br></br>
+        <h4 className="leading-relaxed">
+          <span className="text-[#3FAF95] font-medium text-xl">
+            Known For :{" "}
+          </span>{" "}
+          {personData.known_for_department}
+        </h4>
+        <br></br>
+        <h4 className="leading-relaxed">
+          <span className="text-[#3FAF95] font-medium text-xl">
+            Birthday :{" "}
+          </span>{" "}
+          {personData.birthday}
+        </h4>
+        <br></br>
+        <h4 className="leading-relaxed">
+          <span className="text-[#3FAF95] font-medium text-xl">Gender : </span>{" "}
+          {personData.gender}
+        </h4>
+        <br></br>
+        <h4 className="leading-relaxed">
+          <span className="text-[#3FAF95] font-medium text-xl">
+            Place of Birth :{" "}
+          </span>{" "}
+          {personData.place_of_birth}
+        </h4>
+        <br></br>
+        <h4 className="leading-relaxed">
+          <span className="text-[#3FAF95] font-medium text-xl">
+            Popularity :{" "}
+          </span>{" "}
+          {personData.popularity}
+        </h4>
+        <br></br>
+        <h4 className="leading-relaxed">
+          <span className="text-[#3FAF95] font-medium text-xl">
+            Also known as :{" "}
+          </span>{" "}
+          {personData.also_known_as}
+        </h4>
+        <br></br>
+      </div>
     </div>
   )
 }

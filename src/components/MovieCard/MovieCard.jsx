@@ -5,7 +5,7 @@ import { Card, CardBody, CardFooter } from "@nextui-org/react"
 export default function MovieCard({ title, poster_path, vote_average }) {
   return (
     <Card
-      className="bg-white hover:bg-transparent hover:text-white"
+      className="bg-white hover:bg-transparent hover:text-white "
       shadow="sm"
       isPressable
       onPress={() => console.log("item pressed")}

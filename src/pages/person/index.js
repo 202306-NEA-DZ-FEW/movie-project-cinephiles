@@ -2,23 +2,23 @@ import Navbar from "../../components/Navbar/Navbar"
 import PersonCard from "../../components/PersonCard"
 import Grid from "@mui/material/Unstable_Grid2"
 import Link from "next/link"
-import { fetcher } from "../../utils/api"
+import fetcher from "@/utils/API"
 
 const Persons = ({ people }) => {
   return (
-    <div>
-      <Grid container spacing={1}>
+    <>
+      <Grid className=" m-10" container spacing={1}>
         {people.results.map((person, index) => {
           return (
-            <Grid key={person.id} item xs={12} sm={6} md={3}>
-              <Link href={`/person/${person.id}`}>
+            <Grid key={person.id} item xs={12} sm={6} md={3} className="mb-6  ">
+              <Link className="m-8 " href={`/person/${person.id}`}>
                 <PersonCard {...person} />
               </Link>
             </Grid>
           )
         })}
       </Grid>
-    </div>
+    </>
   )
 }
 

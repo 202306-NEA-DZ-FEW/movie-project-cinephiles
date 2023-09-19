@@ -6,7 +6,11 @@ import { CardActionArea } from "@mui/material"
 
 export default function PersonCard({ name, id, profile_path }) {
   return (
-    <Card key={id} sx={{ maxWidth: 345 }}>
+    <Card
+      className="bg-white hover:bg-transparent hover:text-white rounded-3xl"
+      key={id}
+      sx={{ maxWidth: 345 }}
+    >
       <CardActionArea>
         <CardMedia
           component="img"

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react"
 import fetcher from "@/utils/API"
+import Link from "next/link"
+import MovieCard from "@/components/MovieCard/MovieCard"
 
 export default function SingleMovie({ movieDetails }) {
   const [genres, setGenres] = useState([])
@@ -76,51 +78,107 @@ export default function SingleMovie({ movieDetails }) {
 
   return (
     <div>
-      <div>
+      {/* trailer */}
+      <div className="  bg-white relative flex flex-col justify-center items-center ">
         <img
+          className="w-full trailer  "
           src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`}
           alt={`${movieDetails.title} Poster`}
         />
-
-        <p>
-          Trailer: <a href={trailer}>Watch Trailer</a>
-        </p>
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-gray to-black"></div>
+        <button
+          class="absolute rounded-lg bg-[#3FAF95] py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-500/20 transition-all hover:shadow-lg hover:shadow-gray-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          data-ripple-light="true"
+        >
+          <a href={trailer}>Watch Trailer</a>
+        </button>
       </div>
 
-      <div>
-        <div>
+      <div className="grid grid-cols-2 gap-1 mt-10 ">
+        <div className="col-start-1 col-end-1 w-2/3 px-2 ">
           <img
+            className=" ml-24 rounded-3xl "
             src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
             alt={`${movieDetails.title} Poster`}
           />
         </div>
+        <div className="">
+          <div className="text-5xl underline underline-offset-8 font-bold my-6">
+            <h1>{movieDetails.title}</h1>
+          </div>
 
-        <div>
-          <h2>Title : {movieDetails.title}</h2>
-        </div>
+          <div className=" text-lg leading-loose mr-4 ">
+            <p className="leading-relaxed">
+              <span className="text-[#3FAF95] font-medium text-xl">
+                Overview of the movie :
+              </span>{" "}
+              {movieDetails.overview}{" "}
+            </p>
+            <p>
+              <span className="text-[#3FAF95] font-medium text-xl">
+                Genres :
+              </span>{" "}
+              {genres.map((genre) => genre.name).join(", ")}
+            </p>
+            <p>
+              <span className="text-[#3FAF95] font-medium text-xl">
+                Movie Languages :{" "}
+              </span>
+              {movieDetails.original_language}{" "}
+            </p>
+            <p>
+              <span className="text-[#3FAF95] font-medium text-xl">
+                Release Date :
+              </span>{" "}
+              {movieDetails.release_date}{" "}
+            </p>
+            <p>
+              <span className="text-[#3FAF95] font-medium text-xl">
+                Runtime :
+              </span>{" "}
+              {movieDetails.runtime}{" "}
+            </p>
+            <p>
+              <span className="text-[#3FAF95] font-medium text-xl">
+                Rating :
+              </span>{" "}
+              {movieDetails.vote_average}{" "}
+            </p>
+            <p>
+              <span className="text-[#3FAF95] font-medium text-xl">Vote :</span>{" "}
+              {movieDetails.vote_count}
+            </p>
+          </div>
 
-        <div>
-          <p>Overview of the movie : {movieDetails.overview} </p>
-          <p>Genres: {genres.map((genre) => genre.name).join(", ")}</p>
-          <p>Movie Language:{movieDetails.original_language} </p>
-          <p>Release date : {movieDetails.release_date} </p>
-          <p>Runtime : {movieDetails.runtime} </p>
-          <p>The movie rating : {movieDetails.vote_average} </p>
-          <p>votes : {movieDetails.vote_count}</p>
+          <div className=" text-lg leading-loose ">
+            <p>
+              <span className="text-[#3FAF95] font-medium text-xl">
+                Production Companies:
+              </span>{" "}
+              {productionCompanies.map((company) => company.name).join(", ")}
+            </p>
+            <p>
+              <span className="text-[#3FAF95] font-medium text-xl">
+                Top 5 Actors:
+              </span>{" "}
+              {actors.map((actor) => actor.name).join(", ")}
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div>
-          <p>Director name</p>
-          <p>
-            Production Companies:{" "}
-            {productionCompanies.map((company) => company.name).join(", ")}
-          </p>
-          <p>Top 5 Actors: {actors.map((actor) => actor.name).join(", ")}</p>
-          <p>
-            Related Movies:{" "}
-            {relatedMovies.map((movie) => movie.title).join(", ")}
-          </p>
-        </div>
+      <div className="ml-20 mt-10 ">
+        <h1 className="text-[#3FAF95] font-bold text-2xl">Related Movies :</h1>
+      </div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-6 gap-6 m-10 ml-20">
+        {relatedMovies.map((movie) => (
+          <div key={movie.id}>
+            <Link href={`../movies/${movie.id}`}>
+              <MovieCard {...movie} />
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   )

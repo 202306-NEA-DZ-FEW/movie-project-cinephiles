@@ -4,7 +4,7 @@ import Link from "next/link"
 function LatestMovies({ latest }) {
   return (
     <div className="container mx-auto p-4">
-      <div className="grid grid-cols-2 sm:grid-cols-6 gap-4 m-20">
+      <div className="grid grid-cols-2 sm:grid-cols-6 gap-4 m-10">
         {latest.results.map((movie) => (
           <div key={movie.id}>
             <Link href={`../movies/${movie.id}`}>
